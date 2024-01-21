@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class TeacherController {
     private TeacherService model;
     private TeacherView view;
@@ -22,8 +24,11 @@ public class TeacherController {
                 case 2:
                     removeContact();
                     break;
+                case 3:
+                    changeName();
+                    break;
             }
-        } while (choice != 3);
+        } while (choice != 4);
     }
 
     private void addContact() {
@@ -42,13 +47,18 @@ public class TeacherController {
             model.removeContact(contactToRemove);
         }
     }
-    public void changeContact() {
-        String oldName = model.getContacts("Введите старый RJY: ");
-        String newPassword = model.addContact("Введите изминения: ");
-
-        if (oldName.equals(view.getUserChoice())) {
-            model.addContact(newPassword);
-            System.out.print("ФИО изменены успешно");
-        } else {
+    public void changeName() {
+        String oldName;
+        String newName;
+        System.out.println("Введите ФИО учителя");
+        oldName = view.scanner.nextLine();
+        System.out.print("Введите Изминения: ");
+        newName = view.scanner.nextLine();
+        List<Teacher> lisTeach = model.getContacts();
+        for (Teacher teach:lisTeach){
+            if (teach.getName().equals(oldName)){
+                teach.setName(newName);
+            }
+        }
         }
     }

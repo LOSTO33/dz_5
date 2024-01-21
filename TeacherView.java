@@ -6,6 +6,7 @@ public class TeacherView {
     Scanner scanner;
 
     public TeacherView() {
+
         scanner = new Scanner(System.in);
     }
 
