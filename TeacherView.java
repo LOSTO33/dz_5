@@ -19,7 +19,7 @@ public class TeacherView {
     }
 
     public int getUserChoice() {
-        System.out.print("Выберите контакт Учителя: ");
+        System.out.print("Выберите действие: ");
         return scanner.nextInt();
     }
 
