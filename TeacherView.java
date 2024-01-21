@@ -23,6 +23,16 @@ public class TeacherView {
         return scanner.nextInt();
     }
 
+    public String getNameTeacher(){
+        System.out.print("Введите ФИО Учителя: ");
+        return scanner.nextLine();
+    }
+
+    public String getType(){
+        System.out.print("Введите предмет: ");
+        return scanner.nextLine();
+    }
+
     public void showMenu() {
         System.out.println("Меню:");
         System.out.println("1. Добавить контакт");

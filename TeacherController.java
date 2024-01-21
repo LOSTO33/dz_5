@@ -32,10 +32,8 @@ public class TeacherController {
     }
 
     private void addContact() {
-        System.out.print("Введите ФИО Учителя: ");
-        String name = view.scanner.nextLine();
-        System.out.print("Введите предмет: ");
-        String type = view.scanner.nextLine();
+        String name = view.getNameTeacher();
+        String type = view.getType();
         Teacher contact = new Teacher(name, type);
         model.addContact(contact);
     }
